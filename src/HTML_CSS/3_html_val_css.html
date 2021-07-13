@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function () {
+            //                $('#msg').text('Hello, jQuery'); 
+//                $('#msg').html('<h2>Hello, jQuery');           // h2태그 적용을 희망하는 경우에는 html함수를, 일반적인 문자는 text함수를 이용
+//                $('#msg').text($('#msg').text() + 'Hello, jQuery');
+            $('msg').html($('#msg').html() + '<h2>Hello</h2>');
+            $('input[name=msg]').val('Hello, R');   //value를 수정
+            var msg = $('input[type="text"]').val();    //value값 리턴
+            alert(msg);
+            $('input[type=text],input[type=password]').focus(function () {
+                $(this).css('background-color', 'lightyellow').css('color', 'red');     // text input상자가 focus를 가지면 배경색을 가지게됨+글씨색 빨강.
+            });
+            $('input[type=text], input[type=password]').blur(function () {
+                $(this).css('background-color', 'white').css('color', 'black');         // text input 상자가 focus를 잃으면 배경색이 흰색으로 돌아오고 글씨색도 검정색으로 바뀜
+            })
+        });
+      
+    </script>
+</head>
+<body>
+    <p id="msg"><b>요기</b></p>
+    <p>메시지<input type="text" name="msg" /></p>
+    <p>비밀번호<input type="password" name="pw" /></p>
+    <p>선택 1<input type="radio" /></p>
+    <p>선택 2<input type="checkbox" /></p>
+
+</body>
+</html>

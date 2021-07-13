@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var array = [{ name: '가메출판사', link: 'http://www.kame.co.kr' },
+            { name: '네이버', link: 'http://www.naver.com' },
+                { name: '다음', link: 'http://www.daum.net' },
+                { name: '구글', link: 'http://www.google.com' },];
+            $(array).each(function (idx, item) {                    // item은 필수요소가 아님. 포함하지 않았을 경우 idx를 이용하여 호출할 것.
+                $('body').append('<a href="' + item.link + '">' +   // array[idx].link
+                    item.name + '</a><br>');
+            });
+           /* $('body').append('<a href="' + array[0].link + '">' +
+                array[0].name + "</a>");
+            alert(array[2].name); */
+            $.each(array, function (idx, item) {                    // $(array).each와 $.each일 때 스크립트가 약간 달라짐.
+                $('body').append('<a href="' + item.link + '">' +   
+                    item.name + '</a><br>');
+
+            })
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

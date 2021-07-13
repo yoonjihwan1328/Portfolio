@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="jquery-3.6.0.min.js"></script>     <!--아래 사용하는 함수들 $, ready, ... 이용하기 위해서는 반드시 정확히 선언할 것-->
+    <script>
+        var i = 0;//variable
+        /* jquery */
+        $(document).ready(function () {     //함수를 변수로 사용할 수 있다.
+            /* jQuery */
+            $('#p1').click(function () {    //p1태그를 클릭하면 function이 실행되도록 하자.
+                i = i + 1;
+//                $('#p1').text(i + '번 클릭');    //'#p'는 this로 대체가능
+                $(this).html('<h1>'+i+'번</h1>클릭')   //클릭시 h1태그성격의 결과가 출력됨(글씨크기, 두께, 개행).
+            })
+        });
+        $(function () {
+            /* jQueru */
+        })
+    </script>
+</head>
+<body>
+    <p id="p1">p태그 하나</p>
+</body>
+</html>
